@@ -6,6 +6,25 @@
     <title>Novos Artigos</title>
 </head>
 <body>
-    <h1>Criação de Novo Artigo</h1>
+    <h1>Adicionar um Novo Artigo</h1>
+
+    <form method='POST'>
+
+        <label for="titulo">Título:</label>
+        <input type="text" id="titulo" name="titulo">
+
+        <br><br>
+
+        <label for='conteudo'>Conteúdo:</label>
+        <textarea id="conteudo" name="conteudo"></textarea>
+
+        <br><br>
+        <label for="data">Data:</label>
+        <input type="date" id="data" name="data">
+        <br><br>
+
+        <button type="submit">Adicionar Artigo </button>
+
+    </form>
 </body>
 </html>

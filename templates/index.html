@@ -9,11 +9,17 @@
     <h1>Meu Blog Pessoal</h1>
     <p>Bem-vindo ao meu blog!</p>
 
-    <h1>Artigo {{ id }}</h1>
+    {% for article in articles %}
 
-    <h1> {{ titulo }} </h1>
+        <h2>{{ article['titulo'] }}</h2>
 
-    <p>{{ conteudo }}</p>
+        <p>{{ article['data'] }}</p>
+
+        <p>{{ article['conteudo'] }}</p>
+
+        <a href="/article/{{ article['id'] }}">Ler artigo</a>
+
+    {% endfor %}
 
     </small>{{ data }}<small>
 </body>
