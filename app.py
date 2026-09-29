@@ -70,5 +70,13 @@ def new():
         with open(f'articles/{novo_id}.json', 'w', encoding='utf-8') as arquivo:
             json.dump(novo_artigo, arquivo, ensure_ascii=False, indent=4)
     return render_template('new.html')
+
+
+@app.route('/admin/edit/<int:article_id>', methods=['GET', 'POST'])
+def edit(article_id):
+    with open(f'articles/{article_id}.json', 'r', encoding='utf-8') as arquivo:
+        artigo = json.load(arquivo)
+    return render_template('edit.html', artigo=artigo)
 app.run(debug=True)
+
 
