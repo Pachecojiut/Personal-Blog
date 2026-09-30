@@ -47,6 +47,15 @@ def login():
 # Rota de Admin.
 @app.route('/admin')
 def admin():
+    arquivos = os.listdir('articles')
+    dados = []
+    for arquivo in arquivos:
+        if arquivo.endswith('.json'):#←←←←←←Se for .json, abre o arquivo e carrega os dados.
+            id_artigo = int(arquivo.split('.')[0])
+            with open(f'articles/{arquivo}', 'r', encoding='utf-8') as f:   
+                dados_artigo=(json.load(f))    #←←←←←←Finalmente abre o arquivo e carrega os dados/artigos.
+            dados_artigo['id'] = id_artigo
+            dados.append(dados_artigo)
     if session.get('logado')==True:  #←←←←←←←Se a variavel de sessao 'logado' existir e for True, o usuario tem acesso a pagina administrativa.
         return render_template('admin.html')
     else:
@@ -76,6 +85,11 @@ def new():
 def edit(article_id):
     with open(f'articles/{article_id}.json', 'r', encoding='utf-8') as arquivo:
         artigo = json.load(arquivo)
+    if request.method == 'POST':
+        artigo = {'titulo': request.form['titulo'], 'conteudo': request.form['conteudo'], 'data': request.form['data']}
+        with open(f'articles/{article_id}.json', 'w', encoding='utf-8') as arquivo:
+            json.dump(artigo, arquivo, ensure_ascii=False, indent=4)
+        return redirect(f'/article/{article_id}')
     return render_template('edit.html', artigo=artigo)
 app.run(debug=True)
 
