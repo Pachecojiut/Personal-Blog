@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ titulo }}</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
 
@@ -12,6 +14,8 @@
     <p>{{ conteudo }}</p>
 
     <small>{{ data }}</small>
+
+    <a href="/">Voltar para a página inicial</a>
 
 </body>
 </html>

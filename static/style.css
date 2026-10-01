@@ -1,0 +1,141 @@
+/* =========================
+   CONFIGURAÇÕES GERAIS
+   ========================= */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #F8FAFC;
+    color: #172033;
+
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 30px;
+}
+
+
+/* =========================
+   TÍTULOS
+   ========================= */
+
+h1 {
+    color: #1E3A5F;
+    margin-bottom: 25px;
+}
+
+h2 {
+    color: #1E3A5F;
+}
+
+
+/* =========================
+   LINKS
+   ========================= */
+
+a {
+    color: #2563EB;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    color: #1D4ED8;
+}
+
+
+/* =========================
+   CARDS DOS ARTIGOS
+   ========================= */
+
+.article-card {
+    background-color: #FFFFFF;
+
+    border: 1px solid #E2E8F0;
+    border-radius: 10px;
+
+    padding: 25px;
+    margin-bottom: 20px;
+}
+
+
+/* =========================
+   DATA DO ARTIGO
+   ========================= */
+
+.date {
+    color: #64748B;
+    font-size: 14px;
+}
+
+
+/* =========================
+   BOTÕES
+   ========================= */
+
+button {
+    background-color: #2563EB;
+    color: #FFFFFF;
+
+    border: none;
+    border-radius: 6px;
+
+    padding: 10px 18px;
+
+    font-size: 15px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #1D4ED8;
+}
+
+
+/* =========================
+   DESTAQUES
+   ========================= */
+
+.highlight {
+    color: #F59E0B;
+    font-weight: bold;
+}
+
+
+/* =========================
+   CAMPOS DOS FORMULÁRIOS
+   ========================= */
+
+input,
+textarea {
+    width: 100%;
+
+    padding: 10px;
+
+    border: 1px solid #E2E8F0;
+    border-radius: 6px;
+
+    background-color: #FFFFFF;
+    color: #172033;
+
+    font-size: 15px;
+
+    box-sizing: border-box;
+}
+
+
+/* Campo selecionado */
+
+input:focus,
+textarea:focus {
+    outline: none;
+    border-color: #2563EB;
+}
+
+
+/* =========================
+   LINHAS
+   ========================= */
+
+hr {
+    border: none;
+    border-top: 1px solid #E2E8F0;
+    margin: 25px 0;
+}

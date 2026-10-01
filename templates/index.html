@@ -4,23 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Personal Blog</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <h1>Meu Blog Pessoal</h1>
-    <p>Bem-vindo ao meu blog!</p>
+    <h1>Meu Blog</h1>
+
+    <p>
+        Explore os artigos publicados pela nossa comunidade.
+        Encontre Ideias, conhecimentos e histórias para ler
+        e descobrir algo novo.
+    </p>
+
+    <a href="/login">Área Administrativa</a>
+    <hr>
+    <h2>Artigos para ler</h2>
 
     {% for article in articles %}
 
-        <h2>{{ article['titulo'] }}</h2>
+        <div class="article-card">
+            
+            <h2>{{ article['titulo'] }}</h2>
 
-        <p>{{ article['data'] }}</p>
+            <p class="article-date">{{ article['data'] }}</p>
 
-        <p>{{ article['conteudo'] }}</p>
+            <p>{{ article['conteudo'] }}</p>
 
-        <a href="/article/{{ article['id'] }}">Ler artigo</a>
+            <a href="/article/{{ article['id'] }}">Ler artigo</a>
+
+        </div>
 
     {% endfor %}
 
-    </small>{{ data }}<small>
 </body>
 </html>

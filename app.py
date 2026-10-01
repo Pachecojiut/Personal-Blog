@@ -57,7 +57,7 @@ def admin():
             dados_artigo['id'] = id_artigo
             dados.append(dados_artigo)
     if session.get('logado')==True:  #←←←←←←←Se a variavel de sessao 'logado' existir e for True, o usuario tem acesso a pagina administrativa.
-        return render_template('admin.html')
+        return render_template('admin.html', articles=dados)
     else:
         return 'Acesso negado. Faça login primeiro'
 
@@ -91,6 +91,13 @@ def edit(article_id):
             json.dump(artigo, arquivo, ensure_ascii=False, indent=4)
         return redirect(f'/article/{article_id}')
     return render_template('edit.html', artigo=artigo)
+
+
+@app.route('/admin/delete/<int:article_id>', methods=['POST'])
+def delete(article_id):
+    os.remove(f'articles/{article_id}.json')
+    return redirect('/admin')
 app.run(debug=True)
+
 
 

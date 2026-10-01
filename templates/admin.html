@@ -4,9 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
     <h1>Painel Administrativo</h1>
+
+    <a href="/">Voltar para a página inicial</a>
+
+    <a href="/new">Novo Artigo</a>
+
+    <hr>
 
     {% for article in articles %}
 
@@ -15,6 +23,10 @@
         <p>{{ article['data'] }}</p>
 
         <a href="/admin/edit/{{ article['id'] }}">Editar</a>
+
+        <form action="/admin/delete/{{ article['id'] }}" method="POST">
+            <button type="submit">Excluir</button>
+        </form>
 
         <hr>
 
