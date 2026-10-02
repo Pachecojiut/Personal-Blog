@@ -5,24 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
 
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='iconee.png') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='login.css') }}">
 </head>
 <body>
-    <h1>Login</h1>
-    <form method='POST'>
+    <div class="login-card">
+        <h1>ADMINISTRAÇÃO</h1>
 
-        <label for="username">Usuário:</label>
-        <input type="text" id="username" name="username" required>
+        <h2>Entre para administrar seus artigos</h2>
+        <form method='POST'>
 
-        <br><br>
+            <label for="username">Usuário:</label>
+            <input type="text" id="username" name="username" required>
 
-        <label for="senha">Senha:</label>
-        <input type="password" id="senha" name="senha">
+            <br><br>
 
-        <br><br>
+            <label for="senha">Senha:</label>
+            <input type="password" id="senha" name="senha">
 
-        <button type="submit">Entrar</button>
+            <br><br>
 
-    </form>
+            <button class="entrar-botao" type="submit">Entrar</button>
+        </form>
+
+    <a href="{{ url_for('home') }}" class="voltar-botao">
+    Voltar ao blog
+        </a>
+
 </body>
 </html>

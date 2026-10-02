@@ -1,0 +1,115 @@
+*{
+    box-sizing: border-box;
+}
+html{
+    scroll-behavior: smooth;
+}
+.login-card {
+    width: 400px;
+    padding: 45px;
+
+    background-color: #211C18;
+
+    border-radius: 14px;
+
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+
+    animation: subir 0.8s ease-out;
+}
+.login-card h1 {
+    font-size: 32px;
+    margin: 0 0 15px 0;
+    color: #F1E5D0;
+    font-family: Arial, sans-serif;}
+.login-card h2 {
+    font-size: 20px;
+    margin: 0 0 30px 0;
+    color: #CDBFA8;
+    font-family: Arial, sans-serif;
+}
+.login-card label {
+    display: block;
+    margin-bottom: 5px;
+    color: #CDBFA8;
+    font-size: 15px;
+    font-family: Arial, sans-serif;
+}
+.login-card input[type="text"],
+.login-card input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px; }
+
+.login-card input {
+    width: 100%;
+    padding: 13px 15px;
+
+    background-color: #171411;
+    color: #F1E5D0;
+
+    border: 1px solid #3A3028;
+    border-radius: 10px;
+
+    outline: none;
+
+    transition: 
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+body {
+    margin: 0;
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: #171411;
+}
+
+/* Botoes e suas animações */
+
+.entrar-botao,
+.voltar-botao {
+    transition:
+        transform 0.3s ease,
+        background-color 0.3s ease,
+        color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.entrar-botao:hover,
+.voltar-botao:hover {
+    transform: translateY(-3px);
+}
+.entrar-botao {
+    padding: 12px 25px;
+    background-color: #7D3F46;
+    color: #F1E5D0;
+    border: 1px solid #B86B4B;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.entrar-botao:hover {
+    background-color: #B86B4B;
+    color: #171411;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+.voltar-botao {
+    display: block;
+    margin-top: 20px;
+
+    color: #B86B4B;
+    text-decoration: none;
+
+    text-align: center;
+    transition: 
+        transform 0.3s ease,
+        color 0.3s ease;
+}
+
+.voltar-botao:hover {
+    color: #F1E5D0;
+    transform: translateY(-3px);
+}
