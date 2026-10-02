@@ -1,49 +1,89 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Personal Blog</title>
 
+    <title>Meu Personal Blog</title>
+
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='icone.png') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
+
 <body>
+
+    <!-- BANNER PRINCIPAL -->
     <section class="hero">
-    <div class="hero-content">
-        <h1>Meu Personal Blog</h1>
-    </div>
-</section>
 
-<main class="content">
+        <div class="hero-content">
 
-    <h1 class="articles-title">Artigos, Ideias e conhecimentos</h1>
-    
+            <h1>Meu<br>Personal Blog</h1>
 
-    <p>
-        Explore os artigos publicados pela nossa comunidade.
-        Encontre Ideias, conhecimentos e histórias para ler
-        e descobrir algo novo.
-    </p>
-
-    <a href="/login">Área Administrativa</a>
-    <hr>
-    <h2>Artigos para ler</h2>
-
-    {% for article in articles %}
-
-        <div class="article-card">
-            
-            <h2>{{ article['titulo'] }}</h2>
-
-            <p class="article-date">{{ article['data'] }}</p>
-
-            <p>{{ article['conteudo'] }}</p>
-
-            <a href="/article/{{ article['id'] }}">Ler artigo</a>
+            <p class="hero-description">
+                Artigos, ideias e conhecimentos.
+            </p>
 
         </div>
 
-    {% endfor %}
+    </section>
+
+
+    <!-- CONTEÚDO -->
+    <main class="content">
+
+        <!-- TÍTULO DA SEÇÃO -->
+        <section class="section-title">
+
+                <h1>ARTIGOS</h1>
+
+                <p class="section-description">
+                    Aventure-se por novas ideias, descubra histórias e compartilhe as suas.
+                    Leia, explore e, quem sabe, deixe seu próprio artigo por aqui.
+                </p>
+
+        </section>
+
+
+        <!-- LISTA DE ARTIGOS -->
+        <section class="articles">
+
+            {% for artigo in articles %}
+
+            <article class="article">
+
+            <div class="article-number">
+                {{ loop.index }}
+            </div>
+
+                <div class="article-info">
+
+                    <p class="article-date">
+                        {{ artigo.data }}
+                    </p>
+
+                    <h3>
+                        {{ artigo.titulo }}
+                    </h3>
+
+                    <p class="article-text">
+                        {{ artigo.conteudo[:180] }}...
+                    </p>
+
+                    <a href="/article/{{ loop.index }}">
+                        Ler artigo →
+                    </a>
+
+                </div>
+
+            </article>
+
+            {% endfor %}
+
+        </section>
+
+    </main>
 
 </body>
+
 </html>
