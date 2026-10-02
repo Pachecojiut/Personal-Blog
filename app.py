@@ -1,5 +1,5 @@
 import json
-from flask import Flask, render_template, request, session, redirect
+from flask import Flask, render_template, request, session, redirect,url_for
 import os
 
 app = Flask(__name__)
@@ -78,6 +78,7 @@ def new():
         
         with open(f'articles/{novo_id}.json', 'w', encoding='utf-8') as arquivo:
             json.dump(novo_artigo, arquivo, ensure_ascii=False, indent=4)
+            return redirect(url_for('admin'))
     return render_template('new.html')
 
 

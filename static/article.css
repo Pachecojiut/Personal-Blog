@@ -1,0 +1,81 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #171411;
+    color: #F1E5D0;
+}
+.artigo-card {
+    background-color: #211C18;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    max-width: 800px;
+    margin: 0 auto;
+
+    animation: subir 0.8s ease-out;
+}
+
+.artigo-card h1 {
+    color: #F1E5D0;
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 36px;
+    margin-bottom: 20px;
+
+    animation: aparecer 0.8s ease-out 0.2s both;
+}
+
+.data {
+    color: #B86B4B;
+    font-size: 12px;
+    letter-spacing: 2px;
+
+    animation: aparecer 0.8s ease-out 0.6s both;
+}
+
+.conteudo {
+    color: #CDBFA8;
+    font-size: 18px;
+    line-height: 1.8;
+
+    animation: aparecer 0.8s ease-out 0.4s both;
+}
+@keyframes subir {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes aparecer {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.voltar-botao {
+    display: inline-block;
+    margin-top: 30px;
+    color: #B86B4B;
+    text-decoration: none;
+
+    animation: aparecer 0.8s ease-out 0.8s both;
+
+    transition:
+        transform 0.3s ease,
+        color 0.3s ease;
+}
+
+.voltar-botao:hover {
+    color: #F1E5D0;
+    transform: translateY(-3px);
+}
+
+

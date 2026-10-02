@@ -5,14 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin</title>
 
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='iconee.png') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='admin.css') }}">
 </head>
 <body>
     <h1>Painel Administrativo</h1>
 
     <a href="/">Voltar para a página inicial</a>
     <br>
-    <a href="/new">Novo Artigo</a>
+    <a href="/new" class="novo-artigo">Novo Artigo</a>
 
     <hr>
 
