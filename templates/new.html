@@ -5,10 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Novos Artigos</title>
 
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='iconee.png') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='new.css') }}">
 </head>
 <body>
     <h1>Adicionar um Novo Artigo</h1>
+
+    <p class="subtitulo">Compartilhe ideias, histórias e experiências. Este é o seu espaço para criar e deixar um pouco de você por aqui.
+    </p>
 
     <form method='POST'>
 
@@ -26,6 +30,7 @@
         <br><br>
 
         <button type="submit">Adicionar Artigo </button>
+        <a href="{{ url_for('admin') }}" class="botao-cancelar">Cancelar</a>
 
     </form>
 </body>

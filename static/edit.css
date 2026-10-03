@@ -1,0 +1,169 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: #171411;
+    color: #F1E5D0;
+
+    font-family: Arial, sans-serif;
+}
+
+.edit-card {
+    width: 600px;
+    padding: 45px;
+
+    background-color: #211C18;
+
+    border-radius: 14px;
+
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+.edit-card h1 {
+    margin-top: 0;
+    margin-bottom: 35px;
+
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 40px;
+    font-weight: 400;
+
+    text-align: center;
+    color: #F1E5D0;
+}
+
+.edit-card label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #CDBFA8;
+    font-size: 14px;
+}
+
+.edit-card input,
+.edit-card textarea {
+    width: 100%;
+
+    padding: 13px 15px;
+
+    background-color: #171411;
+    color: #F1E5D0;
+
+    border: 1px solid #3A3028;
+    border-radius: 10px;
+
+    outline: none;
+
+    font-family: Arial, sans-serif;
+
+    transition:
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.edit-card input:focus,
+.edit-card textarea:focus {
+    border-color: #B86B4B;
+
+    box-shadow: 0 0 0 3px rgba(184, 107, 75, 0.12);
+}
+
+.edit-card textarea {
+    min-height: 220px;
+    resize: vertical;
+}
+
+.edit-card button {
+    display: block;
+
+    margin: 25px auto 0;
+
+    padding: 12px 22px;
+
+    background-color: #7D3F46;
+    color: #F1E5D0;
+
+    border: 1px solid #B86B4B;
+    border-radius: 8px;
+
+    font-size: 14px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.3s ease,
+        background-color 0.3s ease,
+        color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.edit-card button:hover {
+    background-color: #B86B4B;
+    color: #171411;
+
+    transform: translateY(-3px);
+
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+/* BARRA DE ROLAGEM DO CAMPO DE CONTEÚDO */
+
+.edit-card textarea::-webkit-scrollbar {
+    width: 10px;
+}
+
+.edit-card textarea::-webkit-scrollbar-track {
+    background: #171411;
+    border-radius: 10px;
+}
+
+.edit-card textarea::-webkit-scrollbar-thumb {
+    background: #7D3F46;
+    border-radius: 10px;
+    border: 2px solid #171411;
+}
+
+.edit-card textarea::-webkit-scrollbar-thumb:hover {
+    background: #B86B4B;
+}
+
+.botao-cancelar {
+    display: block;
+    width: fit-content;
+
+    margin: 15px auto 0;
+    padding: 12px 22px;
+
+    background-color: transparent;
+    color: #B86B4B;
+
+    border: 1px solid #B86B4B;
+    border-radius: 8px;
+
+    font-size: 14px;
+    font-weight: bold;
+
+    text-decoration: none;
+    cursor: pointer;
+
+    transition:
+        transform 0.3s ease,
+        background-color 0.3s ease,
+        color 0.3s ease;
+}
+
+.botao-cancelar:hover {
+    background-color: #B86B4B;
+    color: #171411;
+
+    transform: translateY(-3px);
+}

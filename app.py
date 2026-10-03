@@ -42,7 +42,7 @@ def login():
             print('Usuario logado')
             return redirect('/admin')                             #←←←←←←←Redireciona para a pagina administrativa.
         else:
-            return 'Usuario ou senha incorretos'
+            return render_template('login.html', error='Usuario ou senha incorretos')
     return render_template('login.html')
 # Rota de Admin.
 @app.route('/admin')
@@ -59,7 +59,7 @@ def admin():
     if session.get('logado')==True:  #←←←←←←←Se a variavel de sessao 'logado' existir e for True, o usuario tem acesso a pagina administrativa.
         return render_template('admin.html', articles=dados)
     else:
-        return 'Acesso negado. Faça login primeiro'
+        return render_template('login.html', error='Acesso negado. Faça login primeiro')
 
 # Rota para criar um novo artigo.
 @app.route('/new', methods=['GET', 'POST'])
@@ -90,7 +90,7 @@ def edit(article_id):
         artigo = {'titulo': request.form['titulo'], 'conteudo': request.form['conteudo'], 'data': request.form['data']}
         with open(f'articles/{article_id}.json', 'w', encoding='utf-8') as arquivo:
             json.dump(artigo, arquivo, ensure_ascii=False, indent=4)
-        return redirect(f'/article/{article_id}')
+        return redirect(f'/admin')
     return render_template('edit.html', artigo=artigo)
 
 

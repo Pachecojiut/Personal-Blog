@@ -28,6 +28,10 @@
             <button class="entrar-botao" type="submit">Entrar</button>
         </form>
 
+        {% if error %}
+            <p class="error">{{ error }}</p>
+        {% endif %}
+
     <a href="{{ url_for('home') }}" class="voltar-botao">
     Voltar ao blog
         </a>

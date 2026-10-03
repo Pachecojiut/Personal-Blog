@@ -113,3 +113,10 @@ body {
     color: #F1E5D0;
     transform: translateY(-3px);
 }
+
+.mensagem-erro {
+    margin-top: 15px;
+    color: #B86B4B;
+    text-align: center;
+    font-size: 14px;
+}

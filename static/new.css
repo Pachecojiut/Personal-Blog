@@ -1,0 +1,223 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: #171411;
+    color: #F1E5D0;
+
+    font-family: Arial, sans-serif;
+}
+
+/* TÍTULO */
+
+h1 {
+    position: absolute;
+
+    top: 40px;
+
+    margin: 0;
+
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 40px;
+    font-weight: 400;
+
+    color: #F1E5D0;
+}
+
+/* FORMULÁRIO */
+
+form {
+    width: 600px;
+    padding: 45px;
+
+    background-color: #211C18;
+
+    border-radius: 14px;
+
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* LABELS */
+
+label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #CDBFA8;
+    font-size: 14px;
+}
+
+/* CAMPOS */
+
+input,
+textarea {
+    width: 100%;
+
+    padding: 13px 15px;
+
+    background-color: #171411;
+    color: #F1E5D0;
+
+    border: 1px solid #3A3028;
+    border-radius: 10px;
+
+    outline: none;
+
+    font-family: Arial, sans-serif;
+
+    transition:
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+/* CAMPO SELECIONADO */
+
+input:focus,
+textarea:focus {
+    border-color: #B86B4B;
+
+    box-shadow: 0 0 0 3px rgba(184, 107, 75, 0.12);
+}
+
+/* CONTEÚDO */
+
+textarea {
+    min-height: 220px;
+    resize: vertical;
+}
+
+/* BOTÃO */
+
+button {
+    display: block;
+
+    margin: 25px auto 0;
+
+    padding: 12px 22px;
+
+    background-color: #7D3F46;
+    color: #F1E5D0;
+
+    border: 1px solid #B86B4B;
+    border-radius: 8px;
+
+    font-size: 14px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.3s ease,
+        background-color 0.3s ease,
+        color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+button:hover {
+    background-color: #B86B4B;
+    color: #171411;
+
+    transform: translateY(-3px);
+
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+/* BARRA DE ROLAGEM */
+
+textarea::-webkit-scrollbar {
+    width: 10px;
+}
+
+textarea::-webkit-scrollbar-track {
+    background: #171411;
+    border-radius: 10px;
+}
+
+textarea::-webkit-scrollbar-thumb {
+    background: #7D3F46;
+    border-radius: 10px;
+    border: 2px solid #171411;
+}
+
+textarea::-webkit-scrollbar-thumb:hover {
+    background: #B86B4B;
+}
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 700px) {
+
+    body {
+        padding: 20px;
+    }
+
+    h1 {
+        position: static;
+
+        margin-bottom: 25px;
+
+        font-size: 32px;
+        text-align: center;
+    }
+
+    form {
+        width: 100%;
+        padding: 30px;
+    }
+}
+
+.subtitulo {
+    position: absolute;
+
+    top: 100px;
+
+    margin: 0;
+
+    color: #CDBFA8;
+
+    font-size: 14px;
+    text-align: center;
+
+    max-width: 600px;
+}
+
+.botao-cancelar {
+    display: block;
+    width: fit-content;
+
+    margin: 15px auto 0;
+    padding: 12px 22px;
+
+    background-color: transparent;
+    color: #B86B4B;
+
+    border: 1px solid #B86B4B;
+    border-radius: 8px;
+
+    font-size: 14px;
+    font-weight: bold;
+
+    text-decoration: none;
+    cursor: pointer;
+
+    transition:
+        transform 0.3s ease,
+        background-color 0.3s ease,
+        color 0.3s ease;
+}
+
+.botao-cancelar:hover {
+    background-color: #B86B4B;
+    color: #171411;
+
+    transform: translateY(-3px);
+}

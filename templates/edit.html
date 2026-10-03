@@ -5,31 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edição de Artigos</title>
 
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='iconee.png') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='edit.css') }}">
 </head>
 <body>
-    <h1>Editar Artigos</h1>
+    <div class="edit-card">
 
-    <form method="post"">
-        
-        <label for="titulo">Título:</label>
-        <input type="text" id="titulo" name="titulo" value="{{ artigo['titulo'] }}">
+        <h1>Editar Artigo</h1>
+    
+        <form method="post">
+                
+            <label for="titulo">Título:</label>
+            <input type="text" id="titulo" name="titulo" value="{{ artigo['titulo'] }}">
 
-        <br><br>
+            <br><br>
 
-        <label for="conteudo">Conteúdo:</label>
-        <textarea id="conteudo" name="conteudo">{{ artigo['conteudo'] }}</textarea>
+            <label for="conteudo">Conteúdo:</label>
+            <textarea id="conteudo" name="conteudo">{{ artigo['conteudo'] }}</textarea>
 
-        <br><br>
+            <br><br>
 
-        <label for="data">Data:</label>
-        <input type="date" id="data" name="data" value="{{ artigo['data'] }}">
+            <label for="data">Data:</label>
+            <input type="date" id="data" name="data" value="{{ artigo['data'] }}">
 
-        <br><br>
+            <br><br>
 
-        <button type="submit">Salvar alterações</button>
+            <button type="submit">Salvar alterações</button>
+            <a href="{{ url_for('admin') }}" class="botao-cancelar">Cancelar</a>
 
-    </form>
+        </form>
+    </div>
 </body>
 </html>
 
