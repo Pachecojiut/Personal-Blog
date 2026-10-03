@@ -11,15 +11,20 @@
 <body>
     <h1>Painel Administrativo</h1>
 
+    <p>Este é o seu espaço para criar e compartilhar. 
+    Escreva sobre suas ideias, experiências, descobertas, histórias ou até mesmo sobre aqueles pequenos momentos do cotidiano que merecem ser lembrados. 
+    Sinta-se à vontade para criar, explorar e compartilhar um pouco de você com a nossa comunidade.
+    </p>
+    <br>
     <a href="/">Voltar para a página inicial</a>
     <br>
-    <a href="/new" class="novo-artigo">Novo Artigo</a>
+    <a href="/new">Novo Artigo</a>
 
     <hr>
 
     {% for article in articles %}
 
-         <h2>{{ article['titulo'] }}</h2>
+        <h2>{{ article['titulo'] }}</h2>
 
         <p>{{ article['data'] }}</p>
 
