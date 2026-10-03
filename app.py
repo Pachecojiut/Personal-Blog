@@ -33,7 +33,7 @@ def article(article_id):
 @app.route('/login', methods=['GET', 'POST'])         #←←←←←← A pagina de login usa metodos GET e POST, GET para exibir. POST para envio de dados.
 def login():                 
     if request.method == 'POST':
-        usuario = request.form['username']
+        usuario = request.form['username'].lower()
         senha = request.form['senha']
         print(usuario)
         print(senha)
@@ -74,7 +74,7 @@ def new():
             if arquivo.endswith('.json'):  #←←←←←← '.endswith' Verifica se o arquivo termina com .json, para garantir que só pegue os arquivos de artigos.
                 id_artigo = int(arquivo.split('.')[0])  #←←←←←←Pega o nome do arquivo (que é o id do artigo) e converte para inteiro.
                 ids.append(id_artigo)  #←←←←←←Adiciona o id do artigo na lista de ids.
-        novo_id = max(ids)+1  #←←←←←←Pega o maior id da lista e adiciona 1 para criar o próximo id.
+        novo_id = max(ids, default=0)+1  #←←←←←←Pega o maior id da lista e adiciona 1 para criar o próximo id.
         
         with open(f'articles/{novo_id}.json', 'w', encoding='utf-8') as arquivo:
             json.dump(novo_artigo, arquivo, ensure_ascii=False, indent=4)
