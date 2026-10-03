@@ -98,7 +98,9 @@ def edit(article_id):
 def delete(article_id):
     os.remove(f'articles/{article_id}.json')
     return redirect('/admin')
-app.run(debug=True)
+
+if __name__ == '__main__':
+    app.run(debug=True)
 
 
 
